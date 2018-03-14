@@ -20,11 +20,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-KW-vRP">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-KW-vRP" customClass="ContainerView" customModule="RateMyPuppy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="177" width="375" height="334"/>
-                                <connections>
-                                    <segue destination="Th9-Ba-SNu" kind="embed" identifier="puppyDetails" id="TJU-d8-LWX"/>
-                                </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bb-YW-n3D">
                                 <rect key="frame" x="73" y="120" width="219" height="30"/>
@@ -36,35 +33,35 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-1j-Mm9">
                                 <rect key="frame" x="0.0" y="511" width="375" height="156"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-2T-224">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-2T-224" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="156"/>
                                         <state key="normal" title="1"/>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pil-SF-orE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lm5-LM-rkr">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lm5-LM-rkr" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="75" height="156"/>
                                         <state key="normal" title="2"/>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QPm-Dp-sHe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wG-30-77c">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wG-30-77c" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
                                         <rect key="frame" x="150" y="0.0" width="75" height="156"/>
                                         <state key="normal" title="3"/>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gpB-8c-tCm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpZ-Kc-Qk9">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpZ-Kc-Qk9" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
                                         <rect key="frame" x="225" y="0.0" width="75" height="156"/>
                                         <state key="normal" title="4"/>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Fu-Gu-SJu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iS-Ij-KjM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iS-Ij-KjM" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="75" height="156"/>
                                         <state key="normal" title="5"/>
                                         <connections>
@@ -101,11 +98,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="puppyDetails" destination="W1V-KW-vRP" id="8VX-N0-1OP"/>
+                        <outlet property="puppyDetails" destination="W1V-KW-vRP" id="826-uf-wSG"/>
                         <outlet property="toggleFavorite" destination="8n7-hG-Mbz" id="lxW-Qv-HqC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="PZA-LP-O8E">
+                    <connections>
+                        <action selector="displayNextPuppy:" destination="BYZ-38-t0r" id="oCH-IM-pVh"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-119.2" y="-110.19490254872565"/>
         </scene>
@@ -114,11 +116,11 @@
             <objects>
                 <viewController storyboardIdentifier="puppyView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Th9-Ba-SNu" customClass="PuppyViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Jd-dS-fim">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-lt-eZf">
-                                <rect key="frame" x="15" y="15" width="345" height="303.5"/>
+                                <rect key="frame" x="15" y="35" width="345" height="617"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,7 +143,7 @@
         <!--Favorite View Controller-->
         <scene sceneID="VTU-H6-sw2">
             <objects>
-                <viewController storyboardIdentifier="favoritePuppy" useStoryboardIdentifierAsRestorationIdentifier="YES" id="shX-xD-6TQ" customClass="FavoriteViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="favView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="shX-xD-6TQ" customClass="FavoriteViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nCM-0C-PXH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

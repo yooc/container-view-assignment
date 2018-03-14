@@ -1,21 +1,29 @@
-//
-//  RoundButton.swift
-//  RateMyPuppy
-//
-//  Created by RAWLS, JENNIFER AMANDA [AG/1000] on 3/14/18.
-//  Copyright © 2018 RAWLS, JENNIFER AMANDA [AG/1000]. All rights reserved.
-//
-
 import UIKit
 
-class RoundButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+@IBDesignable class RoundButton: UIButton {
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return self.layer.cornerRadius
+        }
+        set(radius) {
+            self.layer.cornerRadius = radius
+        }
     }
-    */
-
-}
+    
+    func defaultSettings(){
+        self.layer.backgroundColor = UIColor.lightGray.cgColor
+        self.titleLabel?.textColor = UIColor.purple
+        self.layer.cornerRadius = 10
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        defaultSettings()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        defaultSettings()
+    }
+} 
