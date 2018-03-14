@@ -11,9 +11,9 @@
 - Have root controller rating buttons in another container view (ibDesignable!)
 
 #### Homework: A more sophisticated flash card app
-- Use three content view controllers (front and back of card, report card)
+- Use three content view controllers (front and back of card)
 - use swipe gesture to change flashcards
-- Use double tap to show other side of flashcard
+- flip card with button or tap gesture
 - Use IBDesignable and IBInspectable to style the container view to look like a card with rounded corners and drop shadow
 - Include ability to remove cards from review
 - Show a report when there are no more cards to review
@@ -61,7 +61,6 @@ This is easily done through the storyboard (Interface Builder). In the Object li
 **How do I add a child view to a container view?**
 
 This can be done either through the storyboard through the embed segue for a static child view controller. When switching between child view controllers, we will have to change the visible child controller programatically using the following methods:
-https://useyourloaf.com/blog/container-view-controllers/
 ```
 
 addChildViewController(_:)
@@ -152,7 +151,7 @@ class customView: UIView {
 
 **How do I see my custom views in the Storyboard?**
 
-It's as easy as @IBDesignable
+It's as easy as @IBDesignable. Except it's buggy and doesn't always work.
 ```
 @IBDesignable class customView: UIView {
   // MARK: - init methods
