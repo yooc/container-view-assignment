@@ -1,7 +1,16 @@
 # CoderGirl-IOS
 
 ### Container Views
+
+**Resources**
+[developer.apple.com resource](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html)
+
+
 **What is a container view?**
+A container view is a UIViewController
+
+**How does Apple use container views?**
+Existing implementations of container views can be seen in UINavigationController, UITabBarController, and UISplitViewController (for iPad)
 
 **How does a container view fit into the view hierarchy?**
 
