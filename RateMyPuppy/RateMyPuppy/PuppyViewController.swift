@@ -24,6 +24,4 @@ extension PuppyViewController: PuppyViewProtocol {
         self.currentPuppy = puppy
         imageView.image = UIImage.init(named: currentPuppy!.image)
     }
-    
-    
 }

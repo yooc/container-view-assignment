@@ -21,7 +21,22 @@ class MainViewController: UIViewController {
         }
     }
     
-    @IBAction func displayNextPuppy(_ sender: Any) {
+    @IBAction func updateRating(_ sender: UIButton) {
+        guard let labelText = sender.titleLabel?.text,
+            let rating = Int(labelText),
+            let puppyView = self.childViewControllers.last as? PuppyViewProtocol
+            else {
+            print("unable to update rating")
+            return
+        }
+        
+        model.rateCurrentPuppy(as: rating)
+        
+        
+        
+    }
+
+    @IBAction func displayNextPuppy(_ sender: UIButton) {
         guard let puppyView = self.childViewControllers.last as? PuppyViewProtocol else {
             print("unable to display next puppy")
             return

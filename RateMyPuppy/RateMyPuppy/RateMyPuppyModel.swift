@@ -22,6 +22,10 @@ class RateMyPuppyModel {
             return currentPuppy
         }
     }
+    
+    func rateCurrentPuppy(as rating: Int) {
+        puppyData.updateRating(of: currentPuppyIndex, to: rating)
+    }
 }
 
 protocol PuppyDataDelegate: class {

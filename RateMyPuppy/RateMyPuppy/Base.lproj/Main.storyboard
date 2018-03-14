@@ -33,16 +33,60 @@
                                     <action selector="displayNextPuppy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UwP-I5-bKP"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-1j-Mm9">
+                                <rect key="frame" x="0.0" y="511" width="375" height="156"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-2T-224">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="156"/>
+                                        <state key="normal" title="1"/>
+                                        <connections>
+                                            <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pil-SF-orE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lm5-LM-rkr">
+                                        <rect key="frame" x="75" y="0.0" width="75" height="156"/>
+                                        <state key="normal" title="2"/>
+                                        <connections>
+                                            <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QPm-Dp-sHe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wG-30-77c">
+                                        <rect key="frame" x="150" y="0.0" width="75" height="156"/>
+                                        <state key="normal" title="3"/>
+                                        <connections>
+                                            <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gpB-8c-tCm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpZ-Kc-Qk9">
+                                        <rect key="frame" x="225" y="0.0" width="75" height="156"/>
+                                        <state key="normal" title="4"/>
+                                        <connections>
+                                            <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Fu-Gu-SJu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iS-Ij-KjM">
+                                        <rect key="frame" x="300" y="0.0" width="75" height="156"/>
+                                        <state key="normal" title="5"/>
+                                        <connections>
+                                            <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bbE-VG-3tA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Iba-1j-Mm9" secondAttribute="bottom" id="LFD-dJ-L3A"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Bb-YW-n3D" secondAttribute="trailing" constant="83" id="Mga-XK-oC3"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UbX-E7-o1A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iba-1j-Mm9" secondAttribute="trailing" id="VWa-WC-Jbz"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WUb-sp-w2q"/>
                             <constraint firstItem="9Bb-YW-n3D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="b1o-A3-0Tj"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cBc-dP-A7r"/>
                             <constraint firstItem="9Bb-YW-n3D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="drs-qG-tiH"/>
+                            <constraint firstItem="Iba-1j-Mm9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sLv-xb-cdM"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="tsL-j9-aNS"/>
+                            <constraint firstItem="Iba-1j-Mm9" firstAttribute="top" secondItem="W1V-KW-vRP" secondAttribute="bottom" id="wg9-Vo-PgW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
