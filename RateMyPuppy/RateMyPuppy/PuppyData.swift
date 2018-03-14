@@ -14,6 +14,10 @@ struct PuppyData {
         self.allPuppies = [puppy1, puppy2, puppy3, puppy4, puppy5, puppy6, puppy7, puppy8, puppy9, puppy10, puppy11, puppy12]
     }
     
+    func puppy(at index: Int) -> PuppyObject {
+        return allPuppies.element(at: index)!
+    }
+    
     let puppy1 = PuppyObject(name: "Puppy 1", image: "puppy1.jpg", description: "Puppy 1 description")
     let puppy2 = PuppyObject(name: "Puppy 2", image: "puppy2.jpg", description: "Puppy 2 description")
     let puppy3 = PuppyObject(name: "Puppy 3", image: "puppy3.jpg", description: "Puppy 3 description")
