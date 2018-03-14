@@ -103,6 +103,7 @@
                         <viewLayoutGuide key="safeArea" id="gCo-85-2V6"/>
                     </view>
                     <connections>
+                        <outlet property="favoriteText" destination="BiK-fd-EcG" id="R7Y-zK-ars"/>
                         <outlet property="imageView" destination="tpa-OC-FGZ" id="lrO-kT-5R3"/>
                     </connections>
                 </viewController>
