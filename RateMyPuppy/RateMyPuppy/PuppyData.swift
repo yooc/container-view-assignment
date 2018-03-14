@@ -4,10 +4,17 @@ struct PuppyObject {
     let name: String
     let image: String
     let description: String
-    let rating: Int = 0
+    let rating: Int
+    
+    init(name: String, image: String, description: String, rating: Int = 0) {
+        self.name = name
+        self.image = image
+        self.description = description
+        self.rating = rating
+    }
 }
 
-struct PuppyData {
+class PuppyData {
     var allPuppies = [PuppyObject]()
     var count: Int { return allPuppies.count }
     
@@ -19,6 +26,19 @@ struct PuppyData {
         return allPuppies.element(at: index)!
     }
     
+    func updateRating(of index: Int, to rating: Int){
+        guard let puppyToRate = allPuppies.element(at: index) else {
+            print("requested puppy not available for rating")
+            return
+        }
+        
+        let newPuppyObject = PuppyObject(name: puppyToRate.name, image: puppyToRate.image, description: puppyToRate.description, rating: rating)
+        self.allPuppies.remove(at: index)
+        self.allPuppies.insert(newPuppyObject, at: index)
+    }
+    
+    
+    //MARK: - default data
     let puppy1 = PuppyObject(name: "Puppy 1", image: "puppy1.jpg", description: "Puppy 1 description")
     let puppy2 = PuppyObject(name: "Puppy 2", image: "puppy2.jpg", description: "Puppy 2 description")
     let puppy3 = PuppyObject(name: "Puppy 3", image: "puppy3.jpg", description: "Puppy 3 description")
