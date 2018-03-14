@@ -5,12 +5,18 @@
 **Resources**
 [developer.apple.com resource](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html)
 
-
-**What is a container view?**
-A container view is a UIViewController
+**XCode Docs Text**
+> Container View defines a region within a view controller's view subgraph that can include a child view controller. Create an embed segue from the container view to the child view controller in the storyboard.
 
 **How does Apple use container views?**
 Existing implementations of container views can be seen in UINavigationController, UITabBarController, and UISplitViewController (for iPad)
+
+![navigation stack](./Images/navigationstack.png)
+
+![tabBar Controller Views](./Images/tabbar_controllerviews.jpg)
+
+![UISplitView Controller](./Images/splitview_master.png)
+*Image credits: Apple Documentation*
 
 **How does a container view fit into the view hierarchy?**
 
