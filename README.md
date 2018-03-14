@@ -1,5 +1,6 @@
 # CoderGirl-IOS
 ##Container Views, Custom Views and Gestures
+
 *Taught by Amanda Rawls*
 
 #### Demo app: Puppy Rating App
@@ -20,8 +21,11 @@
 Container Views
 ---
 **Resources**
+
 [developer.apple.com: container view](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html)
+
 [developer.apple.com: view heirarchy](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaViewsGuide/WorkingWithAViewHierarchy/WorkingWithAViewHierarchy.html)
+
 [developer.apple.com UIViewController: implementing a child view controller](https://developer.apple.com/documentation/uikit/uiviewcontroller)
 
 **XCode Docs Text**
@@ -51,9 +55,11 @@ Existing implementations of container views can be seen in UINavigationControlle
 - Design a view only once and display it from multiple views
 
 **How do I add a container view?**
+
 This is easily done through the storyboard (Interface Builder). In the Object library find container view, and drag it where it is wanted in the storyboard. It will automatically generate a view which is connected with an Embed segue.
 
 **How do I add a child view to a container view?**
+
 This can be done either through the storyboard through the embed segue for a static child view controller. When switching between child view controllers, we will have to change the visible child controller programatically using the following methods:
 https://useyourloaf.com/blog/container-view-controllers/
 ```
@@ -91,6 +97,7 @@ private func removeContentController(_ child: UIViewController, from stackView: 
 *[code credit](https://useyourloaf.com/blog/container-view-controllers/)*
 
 **How do I communicate between a child view controller and the parent view controller?**
+
 Delegation, of course! In order to set the parent view controller as the delegate to the container view's child view controller, we need to override prepare(for:sender:) and identify which view controller is going to be loaded.
 
 ```
@@ -113,16 +120,21 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 Custom Views
 ---
 **Resources**
+
 [developer.apple.com: live rendering](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/WritingSwiftClassesWithObjective-CBehavior.html#//apple_ref/doc/uid/TP40014216-CH5-ID86)
+
 [developer.apple.com: UIView subclassing notes; methods to override: initialization](https://developer.apple.com/documentation/uikit/uiview)
+
 [developer.apple.com: computed properties (get/set)](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Properties.html)
 
 **What do we mean by custom views?**
+
   A custom view is a UIView that has been subclassed in order to add functionality or other customizations not provided by UIKit.
 
   A UIView is not the only thing that you can subclass. Classes that themselves subclass UIView, provided they are not marked final, can also be subclassed in this way (ie: UIButton is subclassed from UIControl, which is a subclass of UIView.)
 
 **How can I use custom views?**
+
 There are two ways that an app can try to initialize a UIView:
 1. from the storyboard's nib*
 1. programmatically as defined by you
@@ -155,6 +167,7 @@ class customView: UIView {
 > Xibs, known as XML Interface Builder files, are what most of us are familiar with. Create a new user-interface file on Xcode and take a look at the extension — xib! Whenever you are working on a custom interface in Xcode, you are working in a xib. Xibs were introduced in Xcode 3.0 as a way of addressing the common issue of version control associated with nibs. Since nibs were actually bundles, it made version control much more difficult; hence xib files are essentially “flat” XML files (think about any Storyboard conflicts — those are also XML files) that provide more clarity on changes between versions.
 
 **How do I see my custom views in the Storyboard?**
+
 It's as easy as @IBDesignable
 ```
 @IBDesignable class customView: UIView {
@@ -162,11 +175,8 @@ It's as easy as @IBDesignable
 }
 ```
 
-
-
-https://developerslogblog.wordpress.com/2017/05/14/swiff-3-reusable-components-using-xib-files-and-the-interface-builder/
-
 **How do I edit my custom views from the Storyboard?**
+
 It's as easy as @IBInspectable
 ```
 @IBDesignable class customView: UIView {
@@ -195,4 +205,5 @@ Gestures
 ---
 
 **Additional Resources**
+
 [Ray Wenderlich: CALayers](https://www.raywenderlich.com/2502/calayers-tutorial-for-ios-introduction-to-calayers-tutorial)
