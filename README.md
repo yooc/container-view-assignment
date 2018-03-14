@@ -80,22 +80,6 @@ When doing this programmatically it is important to follow a strict order of ope
 
 When removing a child view controller, reverse the order of operation.
 
-```
-private func addContentController(_ child: UIViewController, to stackView: UIStackView) {
-    addChildViewController(child)
-    stackView.addArrangedSubview(child.view)
-    child.didMove(toParentViewController: self)
-}
-
-private func removeContentController(_ child: UIViewController, from stackView: UIStackView) {
-    child.willMove(toParentViewController: nil)
-    stackView.removeArrangedSubview(child.view)
-    child.view.removeFromSuperview()
-    child.removeFromParentViewController()
-}
-```
-*[code credit](https://useyourloaf.com/blog/container-view-controllers/)*
-
 **How do I communicate between a child view controller and the parent view controller?**
 
 Delegation, of course! In order to set the parent view controller as the delegate to the container view's child view controller, we need to override prepare(for:sender:) and identify which view controller is going to be loaded.
