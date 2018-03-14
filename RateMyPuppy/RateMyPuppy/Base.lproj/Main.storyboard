@@ -21,17 +21,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-KW-vRP">
-                                <rect key="frame" x="-0.5" y="177" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="177" width="375" height="334"/>
                                 <connections>
                                     <segue destination="Th9-Ba-SNu" kind="embed" id="TJU-d8-LWX"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bb-YW-n3D">
+                                <rect key="frame" x="73" y="120" width="219" height="30"/>
+                                <state key="normal" title="Next Puppy!"/>
+                                <connections>
+                                    <action selector="displayNextPuppy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UwP-I5-bKP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Bb-YW-n3D" secondAttribute="trailing" constant="83" id="Mga-XK-oC3"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UbX-E7-o1A"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WUb-sp-w2q"/>
+                            <constraint firstItem="9Bb-YW-n3D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="b1o-A3-0Tj"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cBc-dP-A7r"/>
+                            <constraint firstItem="9Bb-YW-n3D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="drs-qG-tiH"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="tsL-j9-aNS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -42,14 +52,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="-110"/>
+            <point key="canvasLocation" x="-119.2" y="-110.19490254872565"/>
         </scene>
         <!--Puppy View Controller-->
         <scene sceneID="D8m-Gb-I2V">
             <objects>
                 <viewController storyboardIdentifier="puppyVIew" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Th9-Ba-SNu" customClass="PuppyViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Jd-dS-fim">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-lt-eZf">

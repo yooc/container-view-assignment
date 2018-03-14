@@ -1,9 +1,9 @@
 import Foundation
 
 class RateMyPuppyModel {
-    var puppyData = PuppyData()
-    var currentPuppyIndex: Int = 1
-    var favoriteIndex: Int?
+    private var puppyData = PuppyData()
+    private var currentPuppyIndex: Int = 1
+    private var favoriteIndex: Int?
     
     var currentPuppy: PuppyObject {
         get {
@@ -11,6 +11,17 @@ class RateMyPuppyModel {
         }
     }
     
+    var nextPuppy: PuppyObject {
+        get {
+            currentPuppyIndex += 1
+            
+            if currentPuppyIndex >= self.puppyData.count {
+                currentPuppyIndex = 0
+            }
+            
+            return currentPuppy
+        }
+    }
 }
 
 protocol PuppyDataDelegate: class {

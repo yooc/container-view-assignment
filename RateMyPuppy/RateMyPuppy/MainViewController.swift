@@ -21,6 +21,14 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBAction func displayNextPuppy(_ sender: Any) {
+        guard let puppyView = self.childViewControllers.last as? PuppyViewProtocol else {
+            print("unable to display next puppy")
+            return
+        }
+        
+        puppyView.updatePuppy(with: model.nextPuppy)
+    }
 }
 
 // MARK: - Puppy Data Delegate
@@ -28,4 +36,8 @@ extension MainViewController: PuppyDataDelegate {
     func getCurrentPuppy() -> PuppyObject {
         return model.currentPuppy
     }
+}
+
+protocol PuppyViewProtocol: class {
+    func updatePuppy(with puppy: PuppyObject)
 }
