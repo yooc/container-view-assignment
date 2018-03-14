@@ -47,7 +47,7 @@
         <!--Puppy View Controller-->
         <scene sceneID="D8m-Gb-I2V">
             <objects>
-                <viewController id="Th9-Ba-SNu" customClass="PuppyViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="puppyVIew" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Th9-Ba-SNu" customClass="PuppyViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Jd-dS-fim">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +76,7 @@
         <!--Favorite View Controller-->
         <scene sceneID="VTU-H6-sw2">
             <objects>
-                <viewController id="shX-xD-6TQ" customClass="FavoriteViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="favoritePuppy" useStoryboardIdentifierAsRestorationIdentifier="YES" id="shX-xD-6TQ" customClass="FavoriteViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nCM-0C-PXH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
