@@ -225,6 +225,7 @@ From Apple:
 - **Shake**: Initiates undo or redo.
 
 **How can I add and customize gestures?**
+
 You can add gesture recognizers in the Storyboard or add gestures programmatically. UIKit provides gesture recognizers that we can use.
 
 ---
