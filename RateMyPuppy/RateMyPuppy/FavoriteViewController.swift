@@ -9,5 +9,13 @@ class FavoriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let favorite = delegate?.getFavoritePuppy() else {
+            print("unable to display favorite puppy")
+            return
+        }
+        
+        imageView.image = UIImage.init(named: favorite.image)
+        favoriteText.text = favorite.description
     }
 }

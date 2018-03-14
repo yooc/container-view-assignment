@@ -6,13 +6,10 @@ class RateMyPuppyModel {
     private var favoriteIndex: Int?
     
     var currentPuppy: PuppyObject {
-        get {
             return puppyData.puppy(at: currentPuppyIndex)
-        }
     }
     
     var nextPuppy: PuppyObject {
-        get {
             currentPuppyIndex += 1
             
             if currentPuppyIndex >= self.puppyData.count {
@@ -20,16 +17,27 @@ class RateMyPuppyModel {
             }
             
             return currentPuppy
-        }
+    }
+    
+    var favoritePuppy: PuppyObject? {
+            guard let favorite = favoriteIndex else {
+                print("We don't have a favorite puppy. 🐶")
+                return nil
+            }
+            return puppyData.puppy(at: favorite)
     }
     
     func rateCurrentPuppy(as rating: Int) {
-        print("rating of puppy: \(currentPuppy.rating)")
         puppyData.updateRating(of: currentPuppyIndex, to: rating)
-        print("rating of puppy updated to: \(currentPuppy.rating)")
+        if let favorite = favoriteIndex, currentPuppy.rating > favorite {
+            favoriteIndex = currentPuppyIndex
+        } else {
+            favoriteIndex = currentPuppyIndex
+        }
     }
 }
 
 protocol PuppyDataDelegate: class {
     func getCurrentPuppy() -> PuppyObject
+    func getFavoritePuppy() -> PuppyObject?
 }

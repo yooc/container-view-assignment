@@ -23,7 +23,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-KW-vRP">
                                 <rect key="frame" x="0.0" y="177" width="375" height="334"/>
                                 <connections>
-                                    <segue destination="Th9-Ba-SNu" kind="embed" id="TJU-d8-LWX"/>
+                                    <segue destination="Th9-Ba-SNu" kind="embed" identifier="puppyDetails" id="TJU-d8-LWX"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bb-YW-n3D">
@@ -73,10 +73,19 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8n7-hG-Mbz">
+                                <rect key="frame" x="90" y="82" width="184" height="30"/>
+                                <state key="normal" title="Show My Favorite Puppy"/>
+                                <connections>
+                                    <action selector="toggleFavorite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MPR-4S-myx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="8n7-hG-Mbz" firstAttribute="centerX" secondItem="9Bb-YW-n3D" secondAttribute="centerX" id="Iz0-Yf-434"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Iba-1j-Mm9" secondAttribute="bottom" id="LFD-dJ-L3A"/>
+                            <constraint firstItem="8n7-hG-Mbz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="MFr-si-6Jd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Bb-YW-n3D" secondAttribute="trailing" constant="83" id="Mga-XK-oC3"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UbX-E7-o1A"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iba-1j-Mm9" secondAttribute="trailing" id="VWa-WC-Jbz"/>
@@ -84,6 +93,7 @@
                             <constraint firstItem="9Bb-YW-n3D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="b1o-A3-0Tj"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cBc-dP-A7r"/>
                             <constraint firstItem="9Bb-YW-n3D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="drs-qG-tiH"/>
+                            <constraint firstItem="9Bb-YW-n3D" firstAttribute="top" secondItem="8n7-hG-Mbz" secondAttribute="bottom" constant="8" symbolic="YES" id="pSW-Oi-6eB"/>
                             <constraint firstItem="Iba-1j-Mm9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sLv-xb-cdM"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="tsL-j9-aNS"/>
                             <constraint firstItem="Iba-1j-Mm9" firstAttribute="top" secondItem="W1V-KW-vRP" secondAttribute="bottom" id="wg9-Vo-PgW"/>
@@ -92,6 +102,7 @@
                     </view>
                     <connections>
                         <outlet property="puppyDetails" destination="W1V-KW-vRP" id="8VX-N0-1OP"/>
+                        <outlet property="toggleFavorite" destination="8n7-hG-Mbz" id="lxW-Qv-HqC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -101,7 +112,7 @@
         <!--Puppy View Controller-->
         <scene sceneID="D8m-Gb-I2V">
             <objects>
-                <viewController storyboardIdentifier="puppyVIew" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Th9-Ba-SNu" customClass="PuppyViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="puppyView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Th9-Ba-SNu" customClass="PuppyViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Jd-dS-fim">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
