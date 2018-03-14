@@ -9,5 +9,23 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.destination {
+        case let puppyView as PuppyViewController:
+            puppyView.delegate = self
+        case let favoritePuppy as FavoriteViewController:
+            favoritePuppy.delegate = self
+        default:
+            break
+        }
+    }
+    
 }
 
+// MARK: - Puppy Data Delegate
+extension MainViewController: PuppyDataDelegate {
+    func getCurrentPuppy() -> PuppyObject {
+        return model.currentPuppy
+    }
+}
