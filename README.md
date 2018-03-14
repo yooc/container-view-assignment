@@ -195,12 +195,36 @@ It's as easy as @IBInspectable
 
 Gestures
 ---
+**Resources**
+
+[developer.apple.com Human Interface Guidelines: Gestures](https://developer.apple.com/ios/human-interface-guidelines/user-interaction/gestures/)
+
+[developer.apple.com: gesture recognition](https://developer.apple.com/documentation/uikit/touches_presses_and_gestures/handling_uikit_gestures)
 
 **What kind of gestures are there?**
+- Tap
+- Pinch
+- Swipe
+- Rotation
+- Pan (Drag)
+- Screen Edge Pan
+- Long Press
+- Custom
 
 **How does Apple use gestures?**
+From Apple:
+> People generally expect the following standard gestures to work the same across the system and in every app.
+**Tap**: Activates a control or selects an item.
+**Double tap**: Zooms in and centers content or an image, or zooms out if already zoomed in.
+**Drag**: Moves an element from side-to-side or drags an element across the screen.
+**Swipe**: When performed with one finger, returns to the previous screen, reveals the hidden view in a split view controller, reveals the Delete button in a table-view row, or reveals actions in a peek. When performed with four fingers on an iPad, switches between apps.
+**Flick**: Scrolls or pans quickly.
+**Pinch**: Zooms in when pinching outward, zooms out when pinching inward.
+**Touch and hold**: When performed in editable or selectable text, displays a magnified view for cursor positioning. When performed in certain views, such as a collection view, enters a mode that allows items to be rearranged.
+**Shake**: Initiates undo or redo.
 
 **How can I add and customize gestures?**
+You can add gesture recognizers in the Storyboard or add gestures programmatically. UIKit provides gesture recognizers that we can use.
 
 ---
 
