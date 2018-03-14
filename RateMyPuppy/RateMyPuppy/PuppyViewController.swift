@@ -9,5 +9,12 @@ class PuppyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let currentPuppy = delegate?.getCurrentPuppy() else {
+            print("Unable to get current puppy")
+            return
+        }
+        
+        imageView.image = UIImage.init(named: currentPuppy.image)
     }
 }
