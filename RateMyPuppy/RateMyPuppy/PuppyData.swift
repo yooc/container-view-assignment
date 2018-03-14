@@ -9,6 +9,7 @@ struct PuppyObject {
 
 struct PuppyData {
     var allPuppies = [PuppyObject]()
+    var count: Int { return allPuppies.count }
     
     init() {
         self.allPuppies = [puppy1, puppy2, puppy3, puppy4, puppy5, puppy6, puppy7, puppy8, puppy9, puppy10, puppy11, puppy12]
