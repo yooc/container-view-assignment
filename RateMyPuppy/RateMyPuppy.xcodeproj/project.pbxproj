@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A03A5462058ADE000FBC4CC /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A03A5452058ADE000FBC4CC /* FavoriteViewController.swift */; };
 		3AA352862058A345008E3139 /* PuppyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA352852058A345008E3139 /* PuppyData.swift */; };
 		3AA352882058A77B008E3139 /* PuppyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA352872058A77B008E3139 /* PuppyViewController.swift */; };
 		3ABDAD7320589FD400B7B475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABDAD7220589FD400B7B475 /* AppDelegate.swift */; };
-		3ABDAD7520589FD400B7B475 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABDAD7420589FD400B7B475 /* ViewController.swift */; };
+		3ABDAD7520589FD400B7B475 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABDAD7420589FD400B7B475 /* MainViewController.swift */; };
 		3ABDAD7820589FD400B7B475 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABDAD7620589FD400B7B475 /* Main.storyboard */; };
 		3ABDAD7A20589FD400B7B475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABDAD7920589FD400B7B475 /* Assets.xcassets */; };
 		3ABDAD7D20589FD400B7B475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABDAD7B20589FD400B7B475 /* LaunchScreen.storyboard */; };
@@ -28,11 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A03A5452058ADE000FBC4CC /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		3AA352852058A345008E3139 /* PuppyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyData.swift; sourceTree = "<group>"; };
 		3AA352872058A77B008E3139 /* PuppyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyViewController.swift; sourceTree = "<group>"; };
 		3ABDAD6F20589FD400B7B475 /* RateMyPuppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RateMyPuppy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABDAD7220589FD400B7B475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3ABDAD7420589FD400B7B475 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3ABDAD7420589FD400B7B475 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3ABDAD7720589FD400B7B475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3ABDAD7920589FD400B7B475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3ABDAD7C20589FD400B7B475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,9 +83,10 @@
 		3ABDAD7120589FD400B7B475 /* RateMyPuppy */ = {
 			isa = PBXGroup;
 			children = (
-				3ABDAD7420589FD400B7B475 /* ViewController.swift */,
-				3AA352872058A77B008E3139 /* PuppyViewController.swift */,
 				3ABDAD7620589FD400B7B475 /* Main.storyboard */,
+				3ABDAD7420589FD400B7B475 /* MainViewController.swift */,
+				3AA352872058A77B008E3139 /* PuppyViewController.swift */,
+				3A03A5452058ADE000FBC4CC /* FavoriteViewController.swift */,
 				3ABDAD922058A07600B7B475 /* Supporting Files */,
 				3AA352852058A345008E3139 /* PuppyData.swift */,
 			);
@@ -213,10 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ABDAD7520589FD400B7B475 /* ViewController.swift in Sources */,
+				3ABDAD7520589FD400B7B475 /* MainViewController.swift in Sources */,
 				3AA352882058A77B008E3139 /* PuppyViewController.swift in Sources */,
 				3AA352862058A345008E3139 /* PuppyData.swift in Sources */,
 				3ABDAD7320589FD400B7B475 /* AppDelegate.swift in Sources */,
+				3A03A5462058ADE000FBC4CC /* FavoriteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
