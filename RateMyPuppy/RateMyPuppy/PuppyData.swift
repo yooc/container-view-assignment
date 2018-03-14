@@ -1,10 +1,12 @@
+import UIKit
+
 struct PuppyObject {
     let name: String
     let image: String
     let description: String
 }
 
-class PuppyData {
+struct PuppyData {
     var allPuppies = [PuppyObject]()
     
     init() {
@@ -23,4 +25,9 @@ class PuppyData {
     let puppy10 = PuppyObject(name: "Puppy 10", image: "puppy10.jpg", description: "Puppy 10 description")
     let puppy11 = PuppyObject(name: "Puppy 11", image: "puppy11.jpg", description: "Puppy 11 description")
     let puppy12 = PuppyObject(name: "Puppy 12", image: "puppy12.jpg", description: "Puppy 12 description")
+}
+
+
+class custom: UIControl {
+    
 }
