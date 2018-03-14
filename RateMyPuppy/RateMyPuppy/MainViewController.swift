@@ -23,9 +23,7 @@ class MainViewController: UIViewController {
     
     @IBAction func updateRating(_ sender: UIButton) {
         guard let labelText = sender.titleLabel?.text,
-            let rating = Int(labelText),
-            let puppyView = self.childViewControllers.last as? PuppyViewProtocol
-            else {
+            let rating = Int(labelText) else {
             print("unable to update rating")
             return
         }

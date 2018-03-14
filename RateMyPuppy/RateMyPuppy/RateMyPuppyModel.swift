@@ -24,7 +24,9 @@ class RateMyPuppyModel {
     }
     
     func rateCurrentPuppy(as rating: Int) {
+        print("rating of puppy: \(currentPuppy.rating)")
         puppyData.updateRating(of: currentPuppyIndex, to: rating)
+        print("rating of puppy updated to: \(currentPuppy.rating)")
     }
 }
 
