@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +19,21 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-KW-vRP">
+                                <rect key="frame" x="-0.5" y="177" width="375" height="333.5"/>
+                                <connections>
+                                    <segue destination="Th9-Ba-SNu" kind="embed" id="TJU-d8-LWX"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="W1V-KW-vRP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UbX-E7-o1A"/>
+                            <constraint firstItem="W1V-KW-vRP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WUb-sp-w2q"/>
+                            <constraint firstItem="W1V-KW-vRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cBc-dP-A7r"/>
+                            <constraint firstItem="W1V-KW-vRP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="tsL-j9-aNS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -30,11 +46,25 @@
             <objects>
                 <viewController id="Th9-Ba-SNu" customClass="PuppyViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Jd-dS-fim">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-lt-eZf">
+                                <rect key="frame" x="15" y="15" width="345" height="303.5"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RDG-eN-PWG" firstAttribute="trailing" secondItem="iZh-lt-eZf" secondAttribute="trailing" constant="15" id="CY0-6m-ZQt"/>
+                            <constraint firstItem="iZh-lt-eZf" firstAttribute="leading" secondItem="RDG-eN-PWG" secondAttribute="leading" constant="15" id="O9m-r3-hhu"/>
+                            <constraint firstItem="iZh-lt-eZf" firstAttribute="top" secondItem="RDG-eN-PWG" secondAttribute="top" constant="15" id="Rpe-tt-k0G"/>
+                            <constraint firstItem="RDG-eN-PWG" firstAttribute="bottom" secondItem="iZh-lt-eZf" secondAttribute="bottom" constant="15" id="bnS-Le-IIM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RDG-eN-PWG"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="iZh-lt-eZf" id="Ft5-gg-Vns"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXc-WO-eh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,9 +77,34 @@
                     <view key="view" contentMode="scaleToFill" id="nCM-0C-PXH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tpa-OC-FGZ">
+                                <rect key="frame" x="-103" y="35" width="582" height="581.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tpa-OC-FGZ" secondAttribute="height" multiplier="1:1" id="s8O-No-32q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiK-fd-EcG">
+                                <rect key="frame" x="0.0" y="631.5" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tpa-OC-FGZ" firstAttribute="top" secondItem="gCo-85-2V6" secondAttribute="top" constant="15" id="CKE-X6-3zc"/>
+                            <constraint firstItem="BiK-fd-EcG" firstAttribute="trailing" secondItem="gCo-85-2V6" secondAttribute="trailing" id="CzX-3p-r9E"/>
+                            <constraint firstItem="BiK-fd-EcG" firstAttribute="top" secondItem="tpa-OC-FGZ" secondAttribute="bottom" constant="15" id="Vcy-yd-H3k"/>
+                            <constraint firstAttribute="bottom" secondItem="BiK-fd-EcG" secondAttribute="bottom" constant="15" id="Xnx-gf-tQy"/>
+                            <constraint firstItem="tpa-OC-FGZ" firstAttribute="centerX" secondItem="nCM-0C-PXH" secondAttribute="centerX" id="w99-QI-wS9"/>
+                            <constraint firstItem="BiK-fd-EcG" firstAttribute="leading" secondItem="gCo-85-2V6" secondAttribute="leading" id="wnM-5i-FGC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gCo-85-2V6"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="tpa-OC-FGZ" id="lrO-kT-5R3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFU-Zd-7ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
