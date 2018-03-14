@@ -4,6 +4,7 @@ struct PuppyObject {
     let name: String
     let image: String
     let description: String
+    let rating: Int = 0
 }
 
 struct PuppyData {
@@ -28,6 +29,3 @@ struct PuppyData {
 }
 
 
-class custom: UIControl {
-    
-}

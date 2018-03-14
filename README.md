@@ -1,5 +1,5 @@
 # CoderGirl-IOS
-##Container Views, Custom Views and Gestures
+## Container Views, Custom Views and Gestures
 
 *Taught by Amanda Rawls*
 
