@@ -1,25 +1,25 @@
 # CoderGirl-IOS
 
 ### Container Views
-* What is a container view? *
+*What is a container view?*
 
-* How does a container view fit into the view hierarchy? *
+*How does a container view fit into the view hierarchy?*
 
-* Why would I want a container view? *
+*Why would I want a container view?*
 
 - Break down complex views into component parts
 - Display multiple views in the same location
 - Design a view only once and display it from multiple views
 
-* How do I add a container view? *
+*How do I add a container view?*
 
-* How do I add a child view to a container view? *
+*How do I add a child view to a container view?*
 
-* How do I access a container view’s child controller? *
+*How do I access a container view’s child controller?*
 
-* How do I change a container view’s child controller? *
+*How do I change a container view’s child controller?*
 
-* How do I communicate between a child view controller and the parent view controller? *
+*How do I communicate between a child view controller and the parent view controller?*
 
 - Delegation
 
