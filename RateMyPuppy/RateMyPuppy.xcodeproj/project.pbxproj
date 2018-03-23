@@ -20,6 +20,7 @@
 		3ABDAD7A20589FD400B7B475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABDAD7920589FD400B7B475 /* Assets.xcassets */; };
 		3ABDAD7D20589FD400B7B475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABDAD7B20589FD400B7B475 /* LaunchScreen.storyboard */; };
 		3ABDAD8820589FD400B7B475 /* RateMyPuppyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABDAD8720589FD400B7B475 /* RateMyPuppyTests.swift */; };
+		F99BFC6B206493C100A810A8 /* RoundedEdgeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99BFC6A206493C100A810A8 /* RoundedEdgeContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		3ABDAD8320589FD400B7B475 /* RateMyPuppyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RateMyPuppyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABDAD8720589FD400B7B475 /* RateMyPuppyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateMyPuppyTests.swift; sourceTree = "<group>"; };
 		3ABDAD8920589FD400B7B475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F99BFC6A206493C100A810A8 /* RoundedEdgeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgeContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				3A05F6CE2059DDF6002F7A4A /* RoundButton.swift */,
 				3A03A54B2058E26200FBC4CC /* RateMyPuppyModel.swift */,
 				3ABDAD7420589FD400B7B475 /* MainViewController.swift */,
+				F99BFC6A206493C100A810A8 /* RoundedEdgeContainerView.swift */,
 				3A05F6CC2059DA75002F7A4A /* ContainerView.swift */,
 				3AA352872058A77B008E3139 /* PuppyViewController.swift */,
 				3A03A5452058ADE000FBC4CC /* FavoriteViewController.swift */,
@@ -233,6 +236,7 @@
 				3AA352882058A77B008E3139 /* PuppyViewController.swift in Sources */,
 				3AA352862058A345008E3139 /* PuppyData.swift in Sources */,
 				3ABDAD7320589FD400B7B475 /* AppDelegate.swift in Sources */,
+				F99BFC6B206493C100A810A8 /* RoundedEdgeContainerView.swift in Sources */,
 				3A05F6CD2059DA75002F7A4A /* ContainerView.swift in Sources */,
 				3A03A54C2058E26200FBC4CC /* RateMyPuppyModel.swift in Sources */,
 				3A03A5462058ADE000FBC4CC /* FavoriteViewController.swift in Sources */,
@@ -390,10 +394,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5QBASGKWPR;
+				DEVELOPMENT_TEAM = 537944W876;
 				INFOPLIST_FILE = "$(SRCROOT)/RateMyPuppy/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rawls.RateMyPuppy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyoo.RateMyPuppy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -405,10 +409,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5QBASGKWPR;
+				DEVELOPMENT_TEAM = 537944W876;
 				INFOPLIST_FILE = "$(SRCROOT)/RateMyPuppy/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rawls.RateMyPuppy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyoo.RateMyPuppy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

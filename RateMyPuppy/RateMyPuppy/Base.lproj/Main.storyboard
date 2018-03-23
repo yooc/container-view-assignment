@@ -20,8 +20,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-KW-vRP" customClass="ContainerView" customModule="RateMyPuppy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="177" width="375" height="334"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-KW-vRP" customClass="RoundedEdgeContainerView" customModule="RateMyPuppy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="181.5" width="375" height="334"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bb-YW-n3D">
                                 <rect key="frame" x="73" y="120" width="219" height="30"/>
@@ -31,7 +36,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-1j-Mm9">
-                                <rect key="frame" x="112.5" y="526" width="150" height="30"/>
+                                <rect key="frame" x="112.5" y="530.5" width="150" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-2T-224" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -109,7 +114,7 @@
                             <constraint firstItem="8n7-hG-Mbz" firstAttribute="centerX" secondItem="9Bb-YW-n3D" secondAttribute="centerX" id="Iz0-Yf-434"/>
                             <constraint firstItem="8n7-hG-Mbz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="MFr-si-6Jd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Bb-YW-n3D" secondAttribute="trailing" constant="83" id="Mga-XK-oC3"/>
-                            <constraint firstItem="W1V-KW-vRP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UbX-E7-o1A"/>
+                            <constraint firstItem="W1V-KW-vRP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="5" id="UbX-E7-o1A"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WUb-sp-w2q"/>
                             <constraint firstItem="9Bb-YW-n3D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="b1o-A3-0Tj"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cBc-dP-A7r"/>
