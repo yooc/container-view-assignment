@@ -4,6 +4,10 @@ class PuppyViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var puppyNameLabel: UILabel!
+    
+    @IBOutlet weak var puppyDescriptionTextField: UITextField!
+    
     weak var delegate: PuppyDataDelegate?
     private var currentPuppy: PuppyObject?
     

@@ -109,6 +109,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Iba-1j-Mm9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H03-dH-bOI"/>
                             <constraint firstItem="8n7-hG-Mbz" firstAttribute="centerX" secondItem="9Bb-YW-n3D" secondAttribute="centerX" id="Iz0-Yf-434"/>
@@ -124,6 +125,10 @@
                             <constraint firstItem="Iba-1j-Mm9" firstAttribute="top" secondItem="W1V-KW-vRP" secondAttribute="bottom" constant="15" id="wg9-Vo-PgW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yms-oS-x8d" appends="YES" id="sDK-pn-wHb"/>
+                            <outletCollection property="gestureRecognizers" destination="K8H-58-v5J" appends="YES" id="x1f-iJ-sGh"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="puppyDetails" destination="W1V-KW-vRP" id="826-uf-wSG"/>
@@ -131,11 +136,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="PZA-LP-O8E">
+                <swipeGestureRecognizer direction="left" id="yms-oS-x8d">
                     <connections>
-                        <action selector="displayNextPuppy:" destination="BYZ-38-t0r" id="oCH-IM-pVh"/>
+                        <action selector="displayNextPuppy:" destination="BYZ-38-t0r" id="rWC-Nw-oTU"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="K8H-58-v5J"/>
             </objects>
             <point key="canvasLocation" x="-119.2" y="-110.19490254872565"/>
         </scene>
@@ -148,25 +154,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-lt-eZf">
-                                <rect key="frame" x="15" y="35" width="345" height="617"/>
+                                <rect key="frame" x="15" y="120" width="345" height="397"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1t5-6K-hpn">
+                                <rect key="frame" x="0.0" y="45" width="375" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r96-V9-3SB">
+                                <rect key="frame" x="0.0" y="537" width="375" height="110"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="r96-V9-3SB" firstAttribute="top" secondItem="iZh-lt-eZf" secondAttribute="bottom" constant="20" id="4Jg-5C-Ogg"/>
+                            <constraint firstItem="1t5-6K-hpn" firstAttribute="top" secondItem="RDG-eN-PWG" secondAttribute="top" constant="25" id="BoM-Bd-GNA"/>
+                            <constraint firstItem="RDG-eN-PWG" firstAttribute="trailing" secondItem="r96-V9-3SB" secondAttribute="trailing" id="CUU-Bv-lRI"/>
                             <constraint firstItem="RDG-eN-PWG" firstAttribute="trailing" secondItem="iZh-lt-eZf" secondAttribute="trailing" constant="15" id="CY0-6m-ZQt"/>
+                            <constraint firstItem="iZh-lt-eZf" firstAttribute="top" secondItem="1t5-6K-hpn" secondAttribute="bottom" constant="47.5" id="KyG-Fy-aCn"/>
                             <constraint firstItem="iZh-lt-eZf" firstAttribute="leading" secondItem="RDG-eN-PWG" secondAttribute="leading" constant="15" id="O9m-r3-hhu"/>
-                            <constraint firstItem="iZh-lt-eZf" firstAttribute="top" secondItem="RDG-eN-PWG" secondAttribute="top" constant="15" id="Rpe-tt-k0G"/>
-                            <constraint firstItem="RDG-eN-PWG" firstAttribute="bottom" secondItem="iZh-lt-eZf" secondAttribute="bottom" constant="15" id="bnS-Le-IIM"/>
+                            <constraint firstItem="iZh-lt-eZf" firstAttribute="top" secondItem="RDG-eN-PWG" secondAttribute="top" constant="100" id="Rpe-tt-k0G"/>
+                            <constraint firstItem="RDG-eN-PWG" firstAttribute="bottom" secondItem="iZh-lt-eZf" secondAttribute="bottom" constant="150" id="bnS-Le-IIM"/>
+                            <constraint firstItem="1t5-6K-hpn" firstAttribute="leading" secondItem="RDG-eN-PWG" secondAttribute="leading" id="fKG-XV-5nT"/>
+                            <constraint firstItem="RDG-eN-PWG" firstAttribute="bottom" secondItem="r96-V9-3SB" secondAttribute="bottom" constant="20" id="rFL-eQ-aVA"/>
+                            <constraint firstItem="r96-V9-3SB" firstAttribute="leading" secondItem="RDG-eN-PWG" secondAttribute="leading" id="vc9-fY-RZx"/>
+                            <constraint firstItem="RDG-eN-PWG" firstAttribute="trailing" secondItem="1t5-6K-hpn" secondAttribute="trailing" id="zEm-aq-JkF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RDG-eN-PWG"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="iZh-lt-eZf" id="Ft5-gg-Vns"/>
+                        <outlet property="puppyDescriptionTextField" destination="r96-V9-3SB" id="VLm-44-QM9"/>
+                        <outlet property="puppyNameLabel" destination="1t5-6K-hpn" id="mvn-rv-BSU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXc-WO-eh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="-110"/>
+            <point key="canvasLocation" x="637.60000000000002" y="-110.19490254872565"/>
         </scene>
         <!--Favorite View Controller-->
         <scene sceneID="VTU-H6-sw2">
