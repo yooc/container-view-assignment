@@ -5,12 +5,14 @@ struct PuppyObject {
     let image: String
     let description: String
     let rating: Int
+    let viewCount: Int
     
-    init(name: String, image: String, description: String, rating: Int = 0) {
+    init(name: String, image: String, description: String, rating: Int = 0, viewCount: Int = 0) {
         self.name = name
         self.image = image
         self.description = description
         self.rating = rating
+        self.viewCount = viewCount
     }
 }
 
@@ -35,6 +37,23 @@ class PuppyData {
         let newPuppyObject = PuppyObject(name: puppyToRate.name, image: puppyToRate.image, description: puppyToRate.description, rating: rating)
         self.allPuppies.remove(at: index)
         self.allPuppies.insert(newPuppyObject, at: index)
+    }
+    
+    func updateViewCount(of index: Int) {
+        guard let puppyToUpdateCount = allPuppies.element(at: index) else {
+            print("requested puppy not available for updating view count")
+            return
+        }
+        
+        let newPuppyObject = PuppyObject(
+            name: puppyToUpdateCount.name,
+            image: puppyToUpdateCount.image,
+            description: puppyToUpdateCount.description,
+            viewCount: puppyToUpdateCount.viewCount + 1)
+        self.allPuppies.remove(at: index)
+        self.allPuppies.insert(newPuppyObject, at: index)
+        
+        print("\(newPuppyObject.viewCount)")
     }
     
     

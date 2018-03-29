@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N8s-Is-YVv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,6 +12,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--ViewCountReport-->
+        <scene sceneID="Bm4-AJ-NAX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ViewCountReport" id="Wad-0U-e8n" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="urU-Ia-qvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634" y="-610"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -21,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-KW-vRP" customClass="RoundedEdgeContainerView" customModule="RateMyPuppy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="181.5" width="375" height="334"/>
+                                <rect key="frame" x="0.0" y="203.5" width="375" height="334"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="15"/>
@@ -29,14 +37,14 @@
                                 </userDefinedRuntimeAttributes>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bb-YW-n3D">
-                                <rect key="frame" x="73" y="120" width="219" height="30"/>
+                                <rect key="frame" x="73" y="164" width="219" height="30"/>
                                 <state key="normal" title="Next Puppy!"/>
                                 <connections>
                                     <action selector="displayNextPuppy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UwP-I5-bKP"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-1j-Mm9">
-                                <rect key="frame" x="112.5" y="530.5" width="150" height="30"/>
+                                <rect key="frame" x="112.5" y="552.5" width="150" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-2T-224" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -101,7 +109,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8n7-hG-Mbz">
-                                <rect key="frame" x="90" y="82" width="184" height="30"/>
+                                <rect key="frame" x="90" y="126" width="184" height="30"/>
                                 <state key="normal" title="Show My Favorite Puppy"/>
                                 <connections>
                                     <action selector="toggleFavorite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MPR-4S-myx"/>
@@ -128,8 +136,10 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="yms-oS-x8d" appends="YES" id="sDK-pn-wHb"/>
                             <outletCollection property="gestureRecognizers" destination="K8H-58-v5J" appends="YES" id="x1f-iJ-sGh"/>
+                            <outletCollection property="gestureRecognizers" destination="MQK-YE-NPW" appends="YES" id="JqJ-tN-Xk9"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="Pyp-rb-mcx"/>
                     <connections>
                         <outlet property="puppyDetails" destination="W1V-KW-vRP" id="826-uf-wSG"/>
                         <outlet property="toggleFavorite" destination="8n7-hG-Mbz" id="lxW-Qv-HqC"/>
@@ -141,9 +151,18 @@
                         <action selector="displayNextPuppy:" destination="BYZ-38-t0r" id="rWC-Nw-oTU"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <tapGestureRecognizer id="K8H-58-v5J"/>
+                <tapGestureRecognizer id="K8H-58-v5J">
+                    <connections>
+                        <action selector="displayPuppyDetails:" destination="BYZ-38-t0r" id="gXQ-95-EZ7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="MQK-YE-NPW">
+                    <connections>
+                        <segue destination="Wad-0U-e8n" kind="show" identifier="showViewReport" id="tPL-kt-dHZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-119.2" y="-110.19490254872565"/>
+            <point key="canvasLocation" x="7.2000000000000002" y="-110.19490254872565"/>
         </scene>
         <!--Puppy View Controller-->
         <scene sceneID="D8m-Gb-I2V">
@@ -154,47 +173,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-lt-eZf">
-                                <rect key="frame" x="15" y="120" width="345" height="397"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1t5-6K-hpn">
-                                <rect key="frame" x="0.0" y="45" width="375" height="27.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r96-V9-3SB">
-                                <rect key="frame" x="0.0" y="537" width="375" height="110"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="r96-V9-3SB" firstAttribute="top" secondItem="iZh-lt-eZf" secondAttribute="bottom" constant="20" id="4Jg-5C-Ogg"/>
-                            <constraint firstItem="1t5-6K-hpn" firstAttribute="top" secondItem="RDG-eN-PWG" secondAttribute="top" constant="25" id="BoM-Bd-GNA"/>
-                            <constraint firstItem="RDG-eN-PWG" firstAttribute="trailing" secondItem="r96-V9-3SB" secondAttribute="trailing" id="CUU-Bv-lRI"/>
-                            <constraint firstItem="RDG-eN-PWG" firstAttribute="trailing" secondItem="iZh-lt-eZf" secondAttribute="trailing" constant="15" id="CY0-6m-ZQt"/>
-                            <constraint firstItem="iZh-lt-eZf" firstAttribute="top" secondItem="1t5-6K-hpn" secondAttribute="bottom" constant="47.5" id="KyG-Fy-aCn"/>
-                            <constraint firstItem="iZh-lt-eZf" firstAttribute="leading" secondItem="RDG-eN-PWG" secondAttribute="leading" constant="15" id="O9m-r3-hhu"/>
-                            <constraint firstItem="iZh-lt-eZf" firstAttribute="top" secondItem="RDG-eN-PWG" secondAttribute="top" constant="100" id="Rpe-tt-k0G"/>
-                            <constraint firstItem="RDG-eN-PWG" firstAttribute="bottom" secondItem="iZh-lt-eZf" secondAttribute="bottom" constant="150" id="bnS-Le-IIM"/>
-                            <constraint firstItem="1t5-6K-hpn" firstAttribute="leading" secondItem="RDG-eN-PWG" secondAttribute="leading" id="fKG-XV-5nT"/>
-                            <constraint firstItem="RDG-eN-PWG" firstAttribute="bottom" secondItem="r96-V9-3SB" secondAttribute="bottom" constant="20" id="rFL-eQ-aVA"/>
-                            <constraint firstItem="r96-V9-3SB" firstAttribute="leading" secondItem="RDG-eN-PWG" secondAttribute="leading" id="vc9-fY-RZx"/>
-                            <constraint firstItem="RDG-eN-PWG" firstAttribute="trailing" secondItem="1t5-6K-hpn" secondAttribute="trailing" id="zEm-aq-JkF"/>
+                            <constraint firstItem="RDG-eN-PWG" firstAttribute="trailing" secondItem="iZh-lt-eZf" secondAttribute="trailing" id="CY0-6m-ZQt"/>
+                            <constraint firstItem="iZh-lt-eZf" firstAttribute="leading" secondItem="RDG-eN-PWG" secondAttribute="leading" id="O9m-r3-hhu"/>
+                            <constraint firstItem="iZh-lt-eZf" firstAttribute="top" secondItem="RDG-eN-PWG" secondAttribute="top" id="Rpe-tt-k0G"/>
+                            <constraint firstItem="RDG-eN-PWG" firstAttribute="bottom" secondItem="iZh-lt-eZf" secondAttribute="bottom" id="bnS-Le-IIM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RDG-eN-PWG"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="iZh-lt-eZf" id="Ft5-gg-Vns"/>
-                        <outlet property="puppyDescriptionTextField" destination="r96-V9-3SB" id="VLm-44-QM9"/>
-                        <outlet property="puppyNameLabel" destination="1t5-6K-hpn" id="mvn-rv-BSU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXc-WO-eh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637.60000000000002" y="-110.19490254872565"/>
+            <point key="canvasLocation" x="-785" y="627"/>
         </scene>
         <!--Favorite View Controller-->
         <scene sceneID="VTU-H6-sw2">
@@ -235,7 +232,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFU-Zd-7ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="573"/>
+            <point key="canvasLocation" x="823" y="627"/>
+        </scene>
+        <!--Puppy Detail View Controller-->
+        <scene sceneID="xLI-s2-vwg">
+            <objects>
+                <viewController storyboardIdentifier="puppyDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XWJ-je-gUs" customClass="PuppyDetailViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2lb-M7-oGB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxr-MC-8LS">
+                                <rect key="frame" x="0.0" y="35" width="375" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k3i-zm-KUK">
+                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wCj-94-FVT">
+                                <rect key="frame" x="5" y="63" width="365" height="574"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cxr-MC-8LS" firstAttribute="top" secondItem="B1a-nf-Dbk" secondAttribute="top" constant="15" id="4vu-WC-iCy"/>
+                            <constraint firstItem="wCj-94-FVT" firstAttribute="centerX" secondItem="2lb-M7-oGB" secondAttribute="centerX" id="CWM-jj-HTd"/>
+                            <constraint firstItem="wCj-94-FVT" firstAttribute="top" secondItem="Cxr-MC-8LS" secondAttribute="bottom" id="FlQ-dy-E5D"/>
+                            <constraint firstItem="B1a-nf-Dbk" firstAttribute="bottom" secondItem="k3i-zm-KUK" secondAttribute="bottom" id="FwU-yJ-xcJ"/>
+                            <constraint firstItem="B1a-nf-Dbk" firstAttribute="trailing" secondItem="k3i-zm-KUK" secondAttribute="trailing" id="IEH-5X-IkQ"/>
+                            <constraint firstItem="k3i-zm-KUK" firstAttribute="top" secondItem="wCj-94-FVT" secondAttribute="bottom" id="MuD-0N-y2G"/>
+                            <constraint firstItem="k3i-zm-KUK" firstAttribute="leading" secondItem="B1a-nf-Dbk" secondAttribute="leading" id="XUE-8D-M4F"/>
+                            <constraint firstItem="Cxr-MC-8LS" firstAttribute="leading" secondItem="B1a-nf-Dbk" secondAttribute="leading" id="cBP-oG-ewg"/>
+                            <constraint firstItem="wCj-94-FVT" firstAttribute="leading" secondItem="B1a-nf-Dbk" secondAttribute="leading" constant="5" id="hMe-0i-3eC"/>
+                            <constraint firstItem="B1a-nf-Dbk" firstAttribute="trailing" secondItem="Cxr-MC-8LS" secondAttribute="trailing" id="ms9-Ws-6yJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B1a-nf-Dbk"/>
+                    </view>
+                    <connections>
+                        <outlet property="puppyDescriptionTextField" destination="k3i-zm-KUK" id="YQP-gl-3xL"/>
+                        <outlet property="puppyNameLabel" destination="Cxr-MC-8LS" id="1A6-Rz-bkj"/>
+                        <outlet property="workingView" destination="wCj-94-FVT" id="zpJ-w0-ysR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8a-7d-S6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7" y="627"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eTc-cr-mBk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N8s-Is-YVv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wu7-Tp-tW2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HRY-Bj-5NG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTs-bJ-07n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-930" y="-110"/>
         </scene>
     </scenes>
 </document>

@@ -7,18 +7,22 @@ class MainViewController: UIViewController {
     @IBOutlet weak var toggleFavorite: UIButton!
     
     let model: RateMyPuppyModel = RateMyPuppyModel()
+    var puppyViewController: PuppyViewController!
+    var puppyDetailViewController: PuppyDetailViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         puppyDetails.delegate = self
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let puppyViewController = storyboard.instantiateViewController(withIdentifier: "puppyView") as? PuppyViewController else {
-            print("Unable to instantiate PuppyViewController")
-            return
-        }
+        
+        puppyViewController = (storyboard.instantiateViewController(withIdentifier: "puppyView") as? PuppyViewController)!
+        
+        puppyDetailViewController = (storyboard.instantiateViewController(withIdentifier: "puppyDetailView") as? PuppyDetailViewController)!
         
         puppyViewController.delegate = self
+        puppyDetailViewController.delegate = self
+        let view = puppyDetailViewController.view
         puppyDetails.activeViewController = puppyViewController
     }
     
@@ -39,24 +43,40 @@ class MainViewController: UIViewController {
         }
         
         puppyView.updatePuppy(with: model.nextPuppy)
+        model.incrementViewCount()
+    }
+    
+    @IBAction func displayPuppyDetails(_ sender: Any) {
+        switch self.childViewControllers.last {
+        case _ as PuppyViewController:
+            
+            puppyDetailViewController.getPuppyDetails(with: model.currentPuppy)
+            puppyDetailViewController.delegate = self
+            puppyDetails.activeViewController = puppyDetailViewController
+            
+        case _ as PuppyDetailViewController:
+
+            puppyViewController.delegate = self
+            puppyDetails.activeViewController = puppyViewController
+            
+        default:
+            print("current view is unknown; unable to toggle")
+            return
+        }
     }
     
     @IBAction func toggleFavorite(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         switch self.childViewControllers.last {
-        case let puppyView as PuppyViewController:
+        case _ as PuppyViewController:
             guard let favoriteViewController = storyboard.instantiateViewController(withIdentifier: "favView") as? FavoriteViewController else {
                 print("Unable to instantiate FavoriteViewController")
                 return
             }
             favoriteViewController.delegate = self
             puppyDetails.activeViewController = favoriteViewController
-        case let favoritePuppy as FavoriteViewController:
-            guard let puppyViewController = storyboard.instantiateViewController(withIdentifier: "puppyView") as? FavoriteViewController else {
-                print("Unable to instantiate FavoriteViewController")
-                return
-            }
+        case _ as FavoriteViewController:
             puppyViewController.delegate = self
             puppyDetails.activeViewController = puppyViewController
         default:
@@ -64,7 +84,6 @@ class MainViewController: UIViewController {
             return
         }
     }
-
 }
 
 // MARK: - Puppy Data Delegate

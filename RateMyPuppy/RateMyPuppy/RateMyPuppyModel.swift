@@ -35,6 +35,10 @@ class RateMyPuppyModel {
             favoriteIndex = currentPuppyIndex
         }
     }
+    
+    func incrementViewCount() {
+        puppyData.updateViewCount(of: currentPuppyIndex)
+    }
 }
 
 protocol PuppyDataDelegate: class {

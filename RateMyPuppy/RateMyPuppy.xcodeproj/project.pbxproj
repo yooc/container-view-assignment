@@ -20,7 +20,10 @@
 		3ABDAD7A20589FD400B7B475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABDAD7920589FD400B7B475 /* Assets.xcassets */; };
 		3ABDAD7D20589FD400B7B475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABDAD7B20589FD400B7B475 /* LaunchScreen.storyboard */; };
 		3ABDAD8820589FD400B7B475 /* RateMyPuppyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABDAD8720589FD400B7B475 /* RateMyPuppyTests.swift */; };
+		F90A4E8A2065C473009396FE /* PuppyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90A4E892065C473009396FE /* PuppyDetailViewController.swift */; };
 		F99BFC6B206493C100A810A8 /* RoundedEdgeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99BFC6A206493C100A810A8 /* RoundedEdgeContainerView.swift */; };
+		F9BA7BE4206B5DE1009893B1 /* ViewCountReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9BA7BE3206B5DE1009893B1 /* ViewCountReport.storyboard */; };
+		F9BA7BE8206B5EF3009893B1 /* ViewCountReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA7BE7206B5EF3009893B1 /* ViewCountReportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +54,10 @@
 		3ABDAD8320589FD400B7B475 /* RateMyPuppyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RateMyPuppyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABDAD8720589FD400B7B475 /* RateMyPuppyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateMyPuppyTests.swift; sourceTree = "<group>"; };
 		3ABDAD8920589FD400B7B475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F90A4E892065C473009396FE /* PuppyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyDetailViewController.swift; sourceTree = "<group>"; };
 		F99BFC6A206493C100A810A8 /* RoundedEdgeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgeContainerView.swift; sourceTree = "<group>"; };
+		F9BA7BE3206B5DE1009893B1 /* ViewCountReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewCountReport.storyboard; sourceTree = "<group>"; };
+		F9BA7BE7206B5EF3009893B1 /* ViewCountReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCountReportViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +99,12 @@
 		3ABDAD7120589FD400B7B475 /* RateMyPuppy */ = {
 			isa = PBXGroup;
 			children = (
+				F9BA7BEA206B623E009893B1 /* UI Subclasses */,
+				F9BA7BE9206B622C009893B1 /* ViewCountReport */,
 				3ABDAD7620589FD400B7B475 /* Main.storyboard */,
-				3A05F6CE2059DDF6002F7A4A /* RoundButton.swift */,
+				F90A4E892065C473009396FE /* PuppyDetailViewController.swift */,
 				3A03A54B2058E26200FBC4CC /* RateMyPuppyModel.swift */,
 				3ABDAD7420589FD400B7B475 /* MainViewController.swift */,
-				F99BFC6A206493C100A810A8 /* RoundedEdgeContainerView.swift */,
 				3A05F6CC2059DA75002F7A4A /* ContainerView.swift */,
 				3AA352872058A77B008E3139 /* PuppyViewController.swift */,
 				3A03A5452058ADE000FBC4CC /* FavoriteViewController.swift */,
@@ -126,6 +133,24 @@
 				3ABDAD7E20589FD400B7B475 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9BA7BE9206B622C009893B1 /* ViewCountReport */ = {
+			isa = PBXGroup;
+			children = (
+				F9BA7BE3206B5DE1009893B1 /* ViewCountReport.storyboard */,
+				F9BA7BE7206B5EF3009893B1 /* ViewCountReportViewController.swift */,
+			);
+			path = ViewCountReport;
+			sourceTree = "<group>";
+		};
+		F9BA7BEA206B623E009893B1 /* UI Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				3A05F6CE2059DDF6002F7A4A /* RoundButton.swift */,
+				F99BFC6A206493C100A810A8 /* RoundedEdgeContainerView.swift */,
+			);
+			path = "UI Subclasses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ABDAD7D20589FD400B7B475 /* LaunchScreen.storyboard in Resources */,
+				F9BA7BE4206B5DE1009893B1 /* ViewCountReport.storyboard in Resources */,
 				3ABDAD7A20589FD400B7B475 /* Assets.xcassets in Resources */,
 				3ABDAD7820589FD400B7B475 /* Main.storyboard in Resources */,
 			);
@@ -237,8 +263,10 @@
 				3AA352862058A345008E3139 /* PuppyData.swift in Sources */,
 				3ABDAD7320589FD400B7B475 /* AppDelegate.swift in Sources */,
 				F99BFC6B206493C100A810A8 /* RoundedEdgeContainerView.swift in Sources */,
+				F90A4E8A2065C473009396FE /* PuppyDetailViewController.swift in Sources */,
 				3A05F6CD2059DA75002F7A4A /* ContainerView.swift in Sources */,
 				3A03A54C2058E26200FBC4CC /* RateMyPuppyModel.swift in Sources */,
+				F9BA7BE8206B5EF3009893B1 /* ViewCountReportViewController.swift in Sources */,
 				3A03A5462058ADE000FBC4CC /* FavoriteViewController.swift in Sources */,
 				3A03A54E2059420800FBC4CC /* Extensions.swift in Sources */,
 			);

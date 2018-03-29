@@ -1,8 +1,8 @@
 import UIKit
 
-class PuppyViewController: UIViewController {
-
-    @IBOutlet weak var imageView: UIImageView!
+class PuppyDetailViewController: UIViewController {
+    
+    @IBOutlet weak var workingView: UIImageView!
     @IBOutlet weak var puppyNameLabel: UILabel!
     @IBOutlet weak var puppyDescriptionTextField: UITextField!
     
@@ -17,11 +17,13 @@ class PuppyViewController: UIViewController {
             return
         }
         
-        imageView.image = UIImage.init(named: currentPuppy.image)
+        workingView.image = UIImage.init(named: currentPuppy.image)
     }
     
-    func updatePuppy(with puppy: PuppyObject) {
+    func getPuppyDetails(with puppy: PuppyObject) {
         self.currentPuppy = puppy
-        imageView.image = UIImage.init(named: currentPuppy!.image)
+        workingView.image = UIImage.init(named: currentPuppy!.image)
+        puppyNameLabel.text = puppy.name
+        puppyDescriptionTextField.text = puppy.description
     }
 }
