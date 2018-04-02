@@ -2,12 +2,18 @@ import UIKit
 
 class PuppyDetailViewController: UIViewController {
     
+    weak var delegate: PuppyDataDelegate?
+    private var currentPuppy: PuppyObject?
+    let model: RateMyPuppyModel = RateMyPuppyModel()
+    
     @IBOutlet weak var workingView: UIImageView!
     @IBOutlet weak var puppyNameLabel: UILabel!
     @IBOutlet weak var puppyDescriptionTextField: UITextField!
+    @IBOutlet weak var removeFromReviewButton: UIButton!
     
-    weak var delegate: PuppyDataDelegate?
-    private var currentPuppy: PuppyObject?
+    @IBAction func removeFromReviewList(_ sender: UIButton) {
+        model.toggleShowInReport()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

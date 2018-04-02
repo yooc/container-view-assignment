@@ -4,15 +4,17 @@ struct PuppyObject {
     let name: String
     let image: String
     let description: String
-    let rating: Int
-    let viewCount: Int
+    var rating: Int
+    var viewCount: Int
+    var showInReport: Bool
     
-    init(name: String, image: String, description: String, rating: Int = 0, viewCount: Int = 0) {
+    init(name: String, image: String, description: String, rating: Int = 0, viewCount: Int = 0, showInReport: Bool = true) {
         self.name = name
         self.image = image
         self.description = description
         self.rating = rating
         self.viewCount = viewCount
+        self.showInReport = showInReport
     }
 }
 
@@ -33,8 +35,15 @@ class PuppyData {
             print("requested puppy not available for rating")
             return
         }
-        
-        let newPuppyObject = PuppyObject(name: puppyToRate.name, image: puppyToRate.image, description: puppyToRate.description, rating: rating)
+
+//        puppyToRate.rating = rating
+        let newPuppyObject = PuppyObject(
+            name: puppyToRate.name,
+            image: puppyToRate.image,
+            description: puppyToRate.description,
+            rating: rating,
+            viewCount: puppyToRate.viewCount,
+            showInReport: puppyToRate.showInReport)
         self.allPuppies.remove(at: index)
         self.allPuppies.insert(newPuppyObject, at: index)
     }
@@ -45,17 +54,35 @@ class PuppyData {
             return
         }
         
+//        puppyToUpdateCount.viewCount += 1
         let newPuppyObject = PuppyObject(
             name: puppyToUpdateCount.name,
             image: puppyToUpdateCount.image,
             description: puppyToUpdateCount.description,
-            viewCount: puppyToUpdateCount.viewCount + 1)
+            rating: puppyToUpdateCount.rating,
+            viewCount: puppyToUpdateCount.viewCount + 1,
+            showInReport: puppyToUpdateCount.showInReport)
         self.allPuppies.remove(at: index)
         self.allPuppies.insert(newPuppyObject, at: index)
-        
-        print("\(newPuppyObject.viewCount)")
     }
     
+    func setShowInReportFalse(of index: Int) {
+        guard let puppyToExclude = allPuppies.element(at: index) else {
+            print("requested puppy not available to exclude from report")
+            return
+        }
+        
+//        puppyToExclude.showInReport = false
+        let newPuppyObject = PuppyObject(
+            name: puppyToExclude.name,
+            image: puppyToExclude.image,
+            description: puppyToExclude.description,
+            rating: puppyToExclude.rating,
+            viewCount: puppyToExclude.viewCount,
+            showInReport: false)
+        self.allPuppies.remove(at: index)
+        self.allPuppies.insert(newPuppyObject, at: index)
+    }
     
     //MARK: - default data
     let puppy1 = PuppyObject(name: "Pupper", image: "puppy1.jpg", description: "Very basic. Your generic pupper.")

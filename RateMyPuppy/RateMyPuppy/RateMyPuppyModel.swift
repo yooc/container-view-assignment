@@ -9,6 +9,10 @@ class RateMyPuppyModel {
             return puppyData.puppy(at: currentPuppyIndex)
     }
     
+    var indexOfCurrentPuppy: Int {
+        return currentPuppyIndex
+    }
+    
     var nextPuppy: PuppyObject {
             currentPuppyIndex += 1
             
@@ -38,6 +42,10 @@ class RateMyPuppyModel {
     
     func incrementViewCount() {
         puppyData.updateViewCount(of: currentPuppyIndex)
+    }
+    
+    func toggleShowInReport() {
+        puppyData.setShowInReportFalse(of: currentPuppyIndex)
     }
 }
 

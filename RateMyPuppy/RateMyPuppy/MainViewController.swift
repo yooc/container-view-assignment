@@ -2,7 +2,6 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-
     @IBOutlet weak var puppyDetails: ContainerView!
     @IBOutlet weak var toggleFavorite: UIButton!
     
@@ -37,6 +36,12 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func displayNextPuppy(_ sender: Any) {
+        
+        if (model.indexOfCurrentPuppy == 11) {
+            performSegue(withIdentifier: "showViewReport", sender: UIView.self)
+            return
+        }
+        
         guard let puppyView = self.childViewControllers.last as? PuppyViewController else {
             print("unable to display next puppy")
             return
@@ -48,14 +53,13 @@ class MainViewController: UIViewController {
     
     @IBAction func displayPuppyDetails(_ sender: Any) {
         switch self.childViewControllers.last {
-        case _ as PuppyViewController:
             
+        case _ as PuppyViewController:
             puppyDetailViewController.getPuppyDetails(with: model.currentPuppy)
             puppyDetailViewController.delegate = self
             puppyDetails.activeViewController = puppyDetailViewController
             
         case _ as PuppyDetailViewController:
-
             puppyViewController.delegate = self
             puppyDetails.activeViewController = puppyViewController
             
@@ -69,16 +73,20 @@ class MainViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         switch self.childViewControllers.last {
+            
         case _ as PuppyViewController:
             guard let favoriteViewController = storyboard.instantiateViewController(withIdentifier: "favView") as? FavoriteViewController else {
                 print("Unable to instantiate FavoriteViewController")
                 return
             }
+            
             favoriteViewController.delegate = self
             puppyDetails.activeViewController = favoriteViewController
+            
         case _ as FavoriteViewController:
             puppyViewController.delegate = self
             puppyDetails.activeViewController = puppyViewController
+            
         default:
             print("current view is unknown; unable to toggle")
             return
