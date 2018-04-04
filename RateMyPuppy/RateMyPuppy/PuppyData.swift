@@ -6,15 +6,15 @@ struct PuppyObject {
     let description: String
     var rating: Int
     var viewCount: Int
-    var showInReport: Bool
+    var showFlashcard: Bool
     
-    init(name: String, image: String, description: String, rating: Int = 0, viewCount: Int = 0, showInReport: Bool = true) {
+    init(name: String, image: String, description: String, rating: Int = 0, viewCount: Int = 0, showFlashcard: Bool = true) {
         self.name = name
         self.image = image
         self.description = description
         self.rating = rating
         self.viewCount = viewCount
-        self.showInReport = showInReport
+        self.showFlashcard = showFlashcard
     }
 }
 
@@ -36,14 +36,13 @@ class PuppyData {
             return
         }
 
-//        puppyToRate.rating = rating
         let newPuppyObject = PuppyObject(
             name: puppyToRate.name,
             image: puppyToRate.image,
             description: puppyToRate.description,
             rating: rating,
             viewCount: puppyToRate.viewCount,
-            showInReport: puppyToRate.showInReport)
+            showFlashcard: puppyToRate.showFlashcard)
         self.allPuppies.remove(at: index)
         self.allPuppies.insert(newPuppyObject, at: index)
     }
@@ -54,32 +53,30 @@ class PuppyData {
             return
         }
         
-//        puppyToUpdateCount.viewCount += 1
         let newPuppyObject = PuppyObject(
             name: puppyToUpdateCount.name,
             image: puppyToUpdateCount.image,
             description: puppyToUpdateCount.description,
             rating: puppyToUpdateCount.rating,
             viewCount: puppyToUpdateCount.viewCount + 1,
-            showInReport: puppyToUpdateCount.showInReport)
+            showFlashcard: puppyToUpdateCount.showFlashcard)
         self.allPuppies.remove(at: index)
         self.allPuppies.insert(newPuppyObject, at: index)
     }
     
-    func setShowInReportFalse(of index: Int) {
+    func setShowFlashcardFalse(of index: Int) {
         guard let puppyToExclude = allPuppies.element(at: index) else {
             print("requested puppy not available to exclude from report")
             return
         }
         
-//        puppyToExclude.showInReport = false
         let newPuppyObject = PuppyObject(
             name: puppyToExclude.name,
             image: puppyToExclude.image,
             description: puppyToExclude.description,
             rating: puppyToExclude.rating,
             viewCount: puppyToExclude.viewCount,
-            showInReport: false)
+            showFlashcard: false)
         self.allPuppies.remove(at: index)
         self.allPuppies.insert(newPuppyObject, at: index)
     }

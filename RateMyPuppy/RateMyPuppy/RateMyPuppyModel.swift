@@ -6,7 +6,7 @@ class RateMyPuppyModel {
     private var favoriteIndex: Int?
     
     var currentPuppy: PuppyObject {
-            return puppyData.puppy(at: currentPuppyIndex)
+        return puppyData.puppy(at: currentPuppyIndex)
     }
     
     var indexOfCurrentPuppy: Int {
@@ -14,21 +14,26 @@ class RateMyPuppyModel {
     }
     
     var nextPuppy: PuppyObject {
+        
+        currentPuppyIndex += 1
+        
+        if currentPuppyIndex >= self.puppyData.count {
+            currentPuppyIndex = 0
+        }
+        
+        if puppyData.puppy(at: currentPuppyIndex).showFlashcard == false {
             currentPuppyIndex += 1
-            
-            if currentPuppyIndex >= self.puppyData.count {
-                currentPuppyIndex = 0
-            }
-            
-            return currentPuppy
+        }
+        
+        return currentPuppy
     }
     
     var favoritePuppy: PuppyObject? {
-            guard let favorite = favoriteIndex else {
-                print("We don't have a favorite puppy. 🐶")
-                return nil
-            }
-            return puppyData.puppy(at: favorite)
+        guard let favorite = favoriteIndex else {
+            print("We don't have a favorite puppy. 🐶")
+            return nil
+        }
+        return puppyData.puppy(at: favorite)
     }
     
     func rateCurrentPuppy(as rating: Int) {
@@ -45,7 +50,7 @@ class RateMyPuppyModel {
     }
     
     func toggleShowInReport() {
-        puppyData.setShowInReportFalse(of: currentPuppyIndex)
+        puppyData.setShowFlashcardFalse(of: currentPuppyIndex)
     }
 }
 
