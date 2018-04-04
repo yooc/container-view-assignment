@@ -17,11 +17,11 @@ class MainViewController: UIViewController {
         
         puppyViewController = (storyboard.instantiateViewController(withIdentifier: "puppyView") as? PuppyViewController)!
         
-        puppyDetailViewController = (storyboard.instantiateViewController(withIdentifier: "puppyDetailView") as? PuppyDetailViewController)!
+//        puppyDetailViewController = (storyboard.instantiateViewController(withIdentifier: "puppyDetailView") as? PuppyDetailViewController)!
         
         puppyViewController.delegate = self
-        puppyDetailViewController.delegate = self
-        let view = puppyDetailViewController.view
+//        puppyDetailViewController.delegate = self
+//        let view = puppyDetailViewController.view
         puppyDetails.activeViewController = puppyViewController
     }
     
@@ -52,9 +52,16 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func displayPuppyDetails(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         switch self.childViewControllers.last {
             
         case _ as PuppyViewController:
+            guard let puppyDetailViewController = storyboard.instantiateViewController(withIdentifier: "puppyDetailView") as? PuppyDetailViewController else {
+                print("Unable to instantiate PuppyDetailViewController")
+                return
+            }
+            
             puppyDetailViewController.getPuppyDetails(with: model.currentPuppy)
             puppyDetailViewController.delegate = self
             puppyDetails.activeViewController = puppyDetailViewController
