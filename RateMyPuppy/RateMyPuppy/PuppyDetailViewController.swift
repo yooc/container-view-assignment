@@ -9,11 +9,6 @@ class PuppyDetailViewController: UIViewController {
     @IBOutlet weak var workingView: UIImageView!
     @IBOutlet weak var puppyNameLabel: UILabel!
     @IBOutlet weak var puppyDescriptionTextField: UITextField!
-    @IBOutlet weak var removeFromReviewButton: UIButton!
-    
-    @IBAction func removeFromReviewList(_ sender: UIButton) {
-        model.toggleShowInReport()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +19,7 @@ class PuppyDetailViewController: UIViewController {
         }
         
         workingView.image = UIImage.init(named: currentPuppy.image)
-    }
-    
-    func getPuppyDetails(with puppy: PuppyObject) {
-        self.currentPuppy = puppy
-        workingView.image = UIImage.init(named: currentPuppy!.image)
-        puppyNameLabel.text = puppy.name
-        puppyDescriptionTextField.text = puppy.description
+        puppyNameLabel.text = currentPuppy.name
+        puppyDescriptionTextField.text = currentPuppy.description
     }
 }

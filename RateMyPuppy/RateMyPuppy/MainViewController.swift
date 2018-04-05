@@ -17,12 +17,14 @@ class MainViewController: UIViewController {
         
         puppyViewController = (storyboard.instantiateViewController(withIdentifier: "puppyView") as? PuppyViewController)!
         
-//        puppyDetailViewController = (storyboard.instantiateViewController(withIdentifier: "puppyDetailView") as? PuppyDetailViewController)!
-        
         puppyViewController.delegate = self
-//        puppyDetailViewController.delegate = self
-//        let view = puppyDetailViewController.view
         puppyDetails.activeViewController = puppyViewController
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewCountReport = segue.destination as? ViewCountReportViewController {
+            viewCountReport.puppyData = model.puppyData
+        }
     }
     
     @IBAction func updateRating(_ sender: UIButton) {
@@ -36,12 +38,6 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func displayNextPuppy(_ sender: Any) {
-        
-        if (model.indexOfCurrentPuppy == 11) {
-            performSegue(withIdentifier: "showViewReport", sender: UIView.self)
-            return
-        }
-        
         guard let puppyView = self.childViewControllers.last as? PuppyViewController else {
             print("unable to display next puppy")
             return
@@ -62,7 +58,6 @@ class MainViewController: UIViewController {
                 return
             }
             
-            puppyDetailViewController.getPuppyDetails(with: model.currentPuppy)
             puppyDetailViewController.delegate = self
             puppyDetails.activeViewController = puppyDetailViewController
             

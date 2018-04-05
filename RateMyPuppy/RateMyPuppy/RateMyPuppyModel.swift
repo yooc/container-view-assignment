@@ -1,7 +1,7 @@
 import Foundation
 
 class RateMyPuppyModel {
-    private var puppyData = PuppyData()
+    private(set) var puppyData = PuppyData()
     private var currentPuppyIndex: Int = 1
     private var favoriteIndex: Int?
     
@@ -49,9 +49,9 @@ class RateMyPuppyModel {
         puppyData.updateViewCount(of: currentPuppyIndex)
     }
     
-    func toggleShowInReport() {
-        puppyData.setShowFlashcardFalse(of: currentPuppyIndex)
-    }
+//    func toggleShowInReport() {
+//        puppyData.setShowFlashcardFalse(of: currentPuppyIndex)
+//    }
 }
 
 protocol PuppyDataDelegate: class {
