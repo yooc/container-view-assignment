@@ -3,6 +3,7 @@ import Foundation
 class RateMyPuppyModel {
     private(set) var puppyData = PuppyData()
     private var currentPuppyIndex: Int = 1
+    private var firstAvailablePuppyIndex: Int?
     private var favoriteIndex: Int?
     
     var currentPuppy: PuppyObject {
@@ -17,12 +18,13 @@ class RateMyPuppyModel {
         
         currentPuppyIndex += 1
         
-        if currentPuppyIndex >= self.puppyData.count {
+        if currentPuppyIndex >= self.puppyData.availableCount {
             currentPuppyIndex = 0
         }
         
         if puppyData.puppy(at: currentPuppyIndex).showFlashcard == false {
             currentPuppyIndex += 1
+            firstAvailablePuppyIndex = currentPuppyIndex
         }
         
         return currentPuppy
@@ -48,10 +50,7 @@ class RateMyPuppyModel {
     func incrementViewCount() {
         puppyData.updateViewCount(of: currentPuppyIndex)
     }
-    
-//    func toggleShowInReport() {
-//        puppyData.setShowFlashcardFalse(of: currentPuppyIndex)
-//    }
+
 }
 
 protocol PuppyDataDelegate: class {

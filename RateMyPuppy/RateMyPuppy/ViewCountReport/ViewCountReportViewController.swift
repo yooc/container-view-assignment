@@ -16,7 +16,7 @@ class ViewCountReportViewController: UIViewController {
 
 extension ViewCountReportViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return puppyData?.count ?? 0
+        return puppyData?.totalCount ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

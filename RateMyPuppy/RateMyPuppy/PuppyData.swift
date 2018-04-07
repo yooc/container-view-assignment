@@ -20,7 +20,17 @@ struct PuppyObject {
 
 class PuppyData {
     var allPuppies = [PuppyObject]()
-    var count: Int { return allPuppies.count }
+    var totalCount: Int { return allPuppies.count }
+    var availableCount: Int {
+        var count = 0
+        for puppy in allPuppies {
+            if puppy.showFlashcard == true {
+                count += 1
+            }
+        }
+        return count
+    }
+    
     
     init() {
         self.allPuppies = [puppy1, puppy2, puppy3, puppy4, puppy5, puppy6, puppy7, puppy8, puppy9, puppy10, puppy11, puppy12]
@@ -79,6 +89,7 @@ class PuppyData {
             showFlashcard: false)
         self.allPuppies.remove(at: index)
         self.allPuppies.insert(newPuppyObject, at: index)
+        self.availableCount
     }
     
     //MARK: - default data
